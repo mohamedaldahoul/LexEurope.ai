@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Pricing from './components/Pricing';
@@ -141,7 +141,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <header className="bg-gradient-to-r from-primary to-accent text-white py-16">
+      <header className="gradient-background text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">AI-Generated Legal Documents</h1>
           <p className="text-xl mb-8">Tailored to Your Business</p>
@@ -171,39 +171,39 @@ export default function Home() {
       </header>
 
       {/* Form Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 gradient-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+          <div className="max-w-4xl mx-auto card-glass overflow-hidden">
             <div className="p-8">
-              <h2 className="text-3xl font-bold mb-6 text-center">Generate Your Custom Legal Document</h2>
+              <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Generate Your Custom Legal Document</h2>
               
-              <div className="mb-8 bg-yellow-50 p-4 rounded-lg border border-yellow-200 text-center">
-                <p className="font-bold mb-2">24-HOUR SPECIAL PRICE ENDS IN:</p>
-                <div className="flex justify-center gap-4">
-                  <div className="bg-gray-800 text-white p-2 rounded">
-                    <div className="text-2xl font-bold">07</div>
-                    <div className="text-xs">HOURS</div>
+              <div className="countdown-container text-center mb-6">
+                <p className="font-bold mb-3 text-gray-800 text-lg">24-HOUR SPECIAL PRICE ENDS IN:</p>
+                <div className="countdown-timer">
+                  <div className="countdown-box">
+                    <div className="countdown-value">07</div>
+                    <div className="countdown-label">HOURS</div>
                   </div>
-                  <div className="bg-gray-800 text-white p-2 rounded">
-                    <div className="text-2xl font-bold">23</div>
-                    <div className="text-xs">MINS</div>
+                  <div className="countdown-box">
+                    <div className="countdown-value">23</div>
+                    <div className="countdown-label">MINS</div>
                   </div>
-                  <div className="bg-gray-800 text-white p-2 rounded">
-                    <div className="text-2xl font-bold">41</div>
-                    <div className="text-xs">SECS</div>
+                  <div className="countdown-box">
+                    <div className="countdown-value">41</div>
+                    <div className="countdown-label">SECS</div>
                   </div>
                 </div>
               </div>
               
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} className="form-container p-6">
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Document Type</label>
-                    <select 
-                      name="documentType" 
-                      value={formData.documentType} 
+                    <label className="block text-sm font-medium text-gray-800 mb-1">Document Type</label>
+                    <select
+                      name="documentType"
+                      value={formData.documentType}
                       onChange={handleInputChange}
-                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                      className="form-select"
                       required
                     >
                       <option value="">Select a document type</option>
@@ -215,25 +215,25 @@ export default function Home() {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Business Name</label>
+                      <label className="block text-sm font-medium text-gray-800 mb-1">Business Name</label>
                       <input 
                         type="text" 
                         name="businessName" 
                         value={formData.businessName} 
                         onChange={handleInputChange}
-                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                        className="form-input"
                         required
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Business Type</label>
+                      <label className="block text-sm font-medium text-gray-800 mb-1">Business Type</label>
                       <input 
                         type="text" 
                         name="businessType" 
                         value={formData.businessType} 
                         onChange={handleInputChange}
-                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                        className="form-input"
                         placeholder="LLC, Corporation, Sole Proprietor, etc."
                         required
                       />
@@ -242,12 +242,12 @@ export default function Home() {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">State/Jurisdiction</label>
+                      <label className="block text-sm font-medium text-gray-800 mb-1">State/Jurisdiction</label>
                       <select 
                         name="state" 
                         value={formData.state} 
                         onChange={handleInputChange}
-                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                        className="form-select"
                         required
                       >
                         <option value="">Select a state</option>
@@ -258,12 +258,12 @@ export default function Home() {
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Industry</label>
+                      <label className="block text-sm font-medium text-gray-800 mb-1">Industry</label>
                       <select 
                         name="industry" 
                         value={formData.industry} 
                         onChange={handleInputChange}
-                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                        className="form-select"
                         required
                       >
                         <option value="">Select an industry</option>
@@ -275,137 +275,205 @@ export default function Home() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Document Protection Level</label>
-                    <div className="flex flex-col space-y-2">
-                      <label className="inline-flex items-center">
-                        <input 
-                          type="radio" 
-                          name="protectionLevel" 
-                          value="standard" 
-                          checked={formData.protectionLevel === 'standard'} 
-                          onChange={handleInputChange}
-                          className="h-4 w-4 text-primary focus:ring-primary border-gray-300"
-                        />
-                        <span className="ml-2">Standard</span>
-                      </label>
-                      <label className="inline-flex items-center">
-                        <input 
-                          type="radio" 
-                          name="protectionLevel" 
-                          value="comprehensive" 
-                          checked={formData.protectionLevel === 'comprehensive'} 
-                          onChange={handleInputChange}
-                          className="h-4 w-4 text-primary focus:ring-primary border-gray-300"
-                        />
-                        <span className="ml-2">Comprehensive</span>
-                      </label>
-                      <label className="inline-flex items-center">
-                        <input 
-                          type="radio" 
-                          name="protectionLevel" 
-                          value="maximum" 
-                          checked={formData.protectionLevel === 'maximum'} 
-                          onChange={handleInputChange}
-                          className="h-4 w-4 text-primary focus:ring-primary border-gray-300"
-                        />
-                        <span className="ml-2">Maximum</span>
-                      </label>
+                    <label className="block text-sm font-medium text-gray-800 mb-1">Document Protection Level</label>
+                    <div className="flex flex-col md:flex-row gap-4 mt-2">
+                      <div className="flex-1 bg-white border border-gray-200 rounded-lg p-4 cursor-pointer transition-all hover:border-primary relative overflow-hidden"
+                           onClick={() => setFormData({...formData, protectionLevel: 'standard'})}
+                      >
+                        <div className={`absolute top-2 right-2 w-5 h-5 rounded-full border ${formData.protectionLevel === 'standard' ? 'bg-primary border-primary' : 'border-gray-400'}`}>
+                          {formData.protectionLevel === 'standard' && (
+                            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </div>
+                        <h3 className="text-lg font-semibold mb-1 text-gray-800">Standard</h3>
+                        <p className="text-sm text-gray-600">Basic legal protection for your business</p>
+                      </div>
+                      
+                      <div className="flex-1 bg-white border border-gray-200 rounded-lg p-4 cursor-pointer transition-all hover:border-primary relative overflow-hidden"
+                           onClick={() => setFormData({...formData, protectionLevel: 'comprehensive'})}
+                      >
+                        <div className={`absolute top-2 right-2 w-5 h-5 rounded-full border ${formData.protectionLevel === 'comprehensive' ? 'bg-primary border-primary' : 'border-gray-400'}`}>
+                          {formData.protectionLevel === 'comprehensive' && (
+                            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </div>
+                        <h3 className="text-lg font-semibold mb-1 text-gray-800">Comprehensive</h3>
+                        <p className="text-sm text-gray-600">Enhanced protection with additional clauses</p>
+                      </div>
+                      
+                      <div className="flex-1 border border-[rgba(255,255,255,0.1)] rounded-lg p-4 cursor-pointer transition-all hover:border-primary relative overflow-hidden"
+                           onClick={() => setFormData({...formData, protectionLevel: 'maximum'})}
+                      >
+                        <div className={`absolute top-2 right-2 w-5 h-5 rounded-full border ${formData.protectionLevel === 'maximum' ? 'bg-primary border-primary' : 'border-white'}`}>
+                          {formData.protectionLevel === 'maximum' && (
+                            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </div>
+                        <h3 className="text-lg font-semibold mb-1 text-white">Maximum</h3>
+                        <p className="text-sm text-gray-300">Complete legal protection for your business</p>
+                      </div>
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Special Clauses (Optional)</label>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      <label className="inline-flex items-center">
-                        <input 
-                          type="checkbox" 
-                          name="enhancedConfidentiality" 
-                          onChange={handleCheckboxChange}
-                          className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-                        />
-                        <span className="ml-2">Enhanced Confidentiality</span>
-                      </label>
-                      <label className="inline-flex items-center">
-                        <input 
-                          type="checkbox" 
-                          name="arbitrationProvision" 
-                          onChange={handleCheckboxChange}
-                          className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-                        />
-                        <span className="ml-2">Arbitration Provision</span>
-                      </label>
-                      <label className="inline-flex items-center">
-                        <input 
-                          type="checkbox" 
-                          name="advancedTermination" 
-                          onChange={handleCheckboxChange}
-                          className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-                        />
-                        <span className="ml-2">Advanced Termination Options</span>
-                      </label>
-                      <label className="inline-flex items-center">
-                        <input 
-                          type="checkbox" 
-                          name="intellectualProperty" 
-                          onChange={handleCheckboxChange}
-                          className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-                        />
-                        <span className="ml-2">Intellectual Property Protection</span>
-                      </label>
+                    <label className="block text-sm font-medium text-gray-800 mb-1">Special Clauses (Optional)</label>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+                      <div 
+                        className={`bg-white border ${formData.specialClauses.includes('nonCompete') ? 'border-primary' : 'border-gray-200'} rounded-lg p-3 cursor-pointer transition-all hover:border-primary relative`}
+                        onClick={(e) => {
+                          const fakeEvent = { target: { name: 'nonCompete', checked: !formData.specialClauses.includes('nonCompete') } } as React.ChangeEvent<HTMLInputElement>;
+                          handleCheckboxChange(fakeEvent);
+                        }}
+                      >
+                        <div className="flex items-center">
+                          <div className={`w-5 h-5 rounded border flex items-center justify-center ${formData.specialClauses.includes('nonCompete') ? 'bg-primary border-primary' : 'border-gray-400'}`}>
+                            {formData.specialClauses.includes('nonCompete') && (
+                              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 2 2" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            )}
+                          </div>
+                          <span className="ml-2 text-gray-800">Non-Compete Clause</span>
+                        </div>
+                      </div>
+                      
+                      <div 
+                        className={`bg-white border ${formData.specialClauses.includes('enhancedConfidentiality') ? 'border-primary' : 'border-gray-200'} rounded-lg p-3 cursor-pointer transition-all hover:border-primary relative`}
+                        onClick={(e) => {
+                          const fakeEvent = { target: { name: 'enhancedConfidentiality', checked: !formData.specialClauses.includes('enhancedConfidentiality') } } as React.ChangeEvent<HTMLInputElement>;
+                          handleCheckboxChange(fakeEvent);
+                        }}
+                      >
+                        <div className="flex items-center">
+                          <div className={`w-5 h-5 rounded border flex items-center justify-center ${formData.specialClauses.includes('enhancedConfidentiality') ? 'bg-primary border-primary' : 'border-gray-400'}`}>
+                            {formData.specialClauses.includes('enhancedConfidentiality') && (
+                              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            )}
+                          </div>
+                          <span className="ml-2 text-gray-800">Enhanced Confidentiality</span>
+                        </div>
+                      </div>
+                      
+                      <div 
+                        className={`bg-white border ${formData.specialClauses.includes('arbitrationProvision') ? 'border-primary' : 'border-gray-200'} rounded-lg p-3 cursor-pointer transition-all hover:border-primary relative`}
+                        onClick={(e) => {
+                          const fakeEvent = { target: { name: 'arbitrationProvision', checked: !formData.specialClauses.includes('arbitrationProvision') } } as React.ChangeEvent<HTMLInputElement>;
+                          handleCheckboxChange(fakeEvent);
+                        }}
+                      >
+                        <div className="flex items-center">
+                          <div className={`w-5 h-5 rounded border flex items-center justify-center ${formData.specialClauses.includes('arbitrationProvision') ? 'bg-primary border-primary' : 'border-gray-400'}`}>
+                            {formData.specialClauses.includes('arbitrationProvision') && (
+                              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            )}
+                          </div>
+                          <span className="ml-2 text-gray-800">Arbitration Provision</span>
+                        </div>
+                      </div>
+                      
+                      <div 
+                        className={`bg-white border ${formData.specialClauses.includes('internationalCompliance') ? 'border-primary' : 'border-gray-200'} rounded-lg p-3 cursor-pointer transition-all hover:border-primary relative`}
+                        onClick={(e) => {
+                          const fakeEvent = { target: { name: 'internationalCompliance', checked: !formData.specialClauses.includes('internationalCompliance') } } as React.ChangeEvent<HTMLInputElement>;
+                          handleCheckboxChange(fakeEvent);
+                        }}
+                      >
+                        <div className="flex items-center">
+                          <div className={`w-5 h-5 rounded border flex items-center justify-center ${formData.specialClauses.includes('internationalCompliance') ? 'bg-primary border-primary' : 'border-gray-400'}`}>
+                            {formData.specialClauses.includes('internationalCompliance') && (
+                              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            )}
+                          </div>
+                          <span className="ml-2 text-gray-800">International Compliance</span>
+                        </div>
+                      </div>
+                      
+                      <div 
+                        className={`bg-white border ${formData.specialClauses.includes('intellectualProperty') ? 'border-primary' : 'border-gray-200'} rounded-lg p-3 cursor-pointer transition-all hover:border-primary relative`}
+                        onClick={(e) => {
+                          const fakeEvent = { target: { name: 'intellectualProperty', checked: !formData.specialClauses.includes('intellectualProperty') } } as React.ChangeEvent<HTMLInputElement>;
+                          handleCheckboxChange(fakeEvent);
+                        }}
+                      >
+                        <div className="flex items-center">
+                          <div className={`w-5 h-5 rounded border flex items-center justify-center ${formData.specialClauses.includes('intellectualProperty') ? 'bg-primary border-primary' : 'border-gray-400'}`}>
+                            {formData.specialClauses.includes('intellectualProperty') && (
+                              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            )}
+                          </div>
+                          <span className="ml-2 text-gray-800">Intellectual Property Protection</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Additional Instructions (Optional)</label>
-                    <textarea 
-                      name="additionalInstructions" 
-                      value={formData.additionalInstructions} 
+                    <label className="block text-sm font-medium mb-1">Additional Instructions (Optional)</label>
+                    <textarea
+                      name="additionalInstructions"
+                      value={formData.additionalInstructions}
                       onChange={handleInputChange}
-                      rows={4}
-                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                       placeholder="Add any specific requirements or details you want included in your document"
+                      className="form-input h-32 bg-white text-gray-900"
                     ></textarea>
                   </div>
-                  
-                  <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <div className="text-3xl font-bold text-center mb-2">$19</div>
-                    <div className="text-center text-sm text-gray-500 mb-4">per document</div>
-                    <div className="text-center mb-4">Regular price: $39 - Save 50% today!</div>
+
+                  <div className="mt-8 text-center">
+                    <div className="mb-4">
+                      <div className="text-3xl font-bold text-gray-800">$19</div>
+                      <div className="text-sm text-gray-600">per document</div>
+                      <div className="text-sm mt-1 text-orange-500 font-semibold">Regular price: $39 - Save 50% today!</div>
+                    </div>
                     
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center">
                         <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="ml-2">Enhanced document customization</span>
+                        <span className="ml-2 text-gray-700">Enhanced document customization</span>
                       </div>
                       <div className="flex items-center">
                         <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="ml-2">PDF + Word formats</span>
+                        <span className="ml-2 text-gray-700">PDF + Word formats</span>
                       </div>
                       <div className="flex items-center">
                         <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="ml-2">1 free revision</span>
+                        <span className="ml-2 text-gray-700">1 free revision</span>
                       </div>
                       <div className="flex items-center">
                         <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="ml-2">Special clauses included</span>
+                        <span className="ml-2 text-gray-700">Special clauses included</span>
                       </div>
                     </div>
                     
-                    <div className="text-center text-sm text-orange-600 mb-4">Only 14 documents remaining at this price today!</div>
+                    <div className="text-center text-sm text-orange-400 font-semibold mb-4">Only 14 documents remaining at this price today!</div>
                     
-                    <button 
-                      type="submit" 
-                      className="w-full py-3 px-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-md transition duration-200"
+                    <button
+                      type="submit"
+                      className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-4 px-4 rounded-md transition duration-300 shadow-lg"
+                      disabled={isGenerating}
                     >
-                      Generate Document Now
+                      {isGenerating ? 'Generating...' : 'Generate Document Now'}
                     </button>
                   </div>
                 </div>

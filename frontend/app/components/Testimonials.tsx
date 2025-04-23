@@ -13,7 +13,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ quote, author, role, company,
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <div className="flex items-start mb-4">
-        <div className="text-4xl text-primary mr-3">"</div>
+        <div className="text-4xl text-primary mr-3"></div>
         <p className="italic text-gray-700">{quote}</p>
       </div>
       <div className="flex items-center mt-4">

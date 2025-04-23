@@ -18,7 +18,7 @@ export default function PaymentSuccess() {
       const verifyPaymentAndGenerateDocument = async () => {
         try {
           // Import is inside the function to avoid issues with SSR
-          const { generateDocument } = await import('../api/documentService');
+           const { generateDocument } = await import('../api/documentService');
           
           // Call backend to verify payment and generate document
           const response = await fetch(`http://localhost:5000/payment-success?session_id=${sessionId}`);
@@ -53,7 +53,7 @@ export default function PaymentSuccess() {
     return (
       <div className="min-h-screen bg-background">
         {/* Loading Header */}
-        <header className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-16">
+        <header className="bg-gradient-to-r from-primary via-secondary to-accent text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <div className="bg-white rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6 shadow-lg">
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
@@ -69,7 +69,7 @@ export default function PaymentSuccess() {
             <p className="mb-6 text-gray-600">This may take up to 2 minutes. Thank you for your patience!</p>
             
             <div className="flex flex-col items-center">
-              <div className="animate-pulse text-xl italic mb-4 text-blue-600">"Turning legal jargon into plain English..."</div>
+              <div className="animate-pulse text-xl italic mb-4 text-blue-600">Turning legal jargon into plain English...</div>
               <div className="w-full bg-gray-200 rounded-full h-2.5 mb-6">
                 <div className="bg-blue-500 h-2.5 rounded-full animate-[loading_2s_ease-in-out_infinite]" style={{width: '70%'}}></div>
               </div>
@@ -93,7 +93,7 @@ export default function PaymentSuccess() {
     return (
       <div className="min-h-screen bg-background">
         {/* Error Header */}
-        <header className="bg-gradient-to-r from-red-500 to-red-600 text-white py-16">
+        <header className="bg-gradient-to-r from-primary via-secondary to-accent text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <div className="bg-white rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6 shadow-lg">
               <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +131,7 @@ export default function PaymentSuccess() {
   return (
     <div className="min-h-screen bg-background">
       {/* Success Header */}
-      <header className="bg-gradient-to-r from-green-500 to-green-600 text-white py-16">
+      <header className="bg-gradient-to-r from-primary via-secondary to-accent text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <div className="bg-white rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6 shadow-lg">
             <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -174,5 +174,7 @@ export default function PaymentSuccess() {
             Return to Home
       </Link>
     </div>
+  </div>
+  </div>
   );
 }

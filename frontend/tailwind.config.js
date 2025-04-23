@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#4f46e5', /* Indigo 600 - more professional and distinctive */
-        secondary: '#0ea5e9', /* Sky 500 - vibrant and complementary */
-        accent: '#ec4899', /* Pink 500 - eye-catching accent */
+        primary: '#2563eb', /* Deep blue similar to InstantLegal.ai */
+        secondary: '#0ea5e9', /* Teal blue for secondary elements */
+        accent: '#f97316', /* Orange accent for call-to-action elements */
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
