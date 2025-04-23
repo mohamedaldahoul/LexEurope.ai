@@ -63,18 +63,18 @@ flask run
 ## Project Structure
 
 ```
-LexEurope-ai/
-├── app.py                  # Main Flask application
-├── requirements.txt        # Python dependencies
-├── .env                    # Environment variables (not in repo)
-├── .gitignore              # Git ignore file
-├── README.md               # Project documentation
-├── static/                 # Static files
-│   ├── css/                # CSS files
-│   ├── js/                 # JavaScript files
-│   └── documents/          # Generated documents
-└── templates/              # HTML templates
-    └── index.html          # Main application template
+lexeurope.ai/
+├── backend/
+│   ├── app.py                  # Main Flask application
+│   ├── requirements.txt        # Python dependencies
+│   ├── static/                 # Static files
+│   │   └── documents/          # Generated documents
+│   └── templates/              # HTML templates
+│       ├── index.html          # Main application template
+│       └── payment_return.html
+├── frontend/
+├── README.md
+└── other project files...
 ```
 
 ## License
