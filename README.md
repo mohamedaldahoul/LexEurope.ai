@@ -1,4 +1,4 @@
-# InstantLegal AI - Legal Document Generator
+# LexEurope AI - Legal Document Generator
 
 A Flask web application that generates professional legal documents using OpenAI's GPT-4 API and ReportLab for PDF generation.
 
@@ -23,7 +23,7 @@ A Flask web application that generates professional legal documents using OpenAI
 1. Clone the repository:
 ```
 git clone <repository-url>
-cd instantlegal-ai
+cd LexEurope-ai
 ```
 
 2. Create a virtual environment and activate it:
@@ -63,7 +63,7 @@ flask run
 ## Project Structure
 
 ```
-instantlegal-ai/
+LexEurope-ai/
 ├── app.py                  # Main Flask application
 ├── requirements.txt        # Python dependencies
 ├── .env                    # Environment variables (not in repo)

@@ -705,8 +705,8 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">Lex<span>Europe</span>AI</a>
-                <a href="mailto:support@lexEurope.ai?subject=Refund%20Request&body=Please%20provide%20your%20order%20details%20and%20reason%20for%20refund%3A%0A%0AOrder%20ID%3A%0ADocument%20Type%3A%0AReason%3A" style="text-decoration: none;">
+                <a href="#" class="logo">Instant<span>Legal</span>AI</a>
+                <a href="mailto:support@LexEurope.ai?subject=Refund%20Request&body=Please%20provide%20your%20order%20details%20and%20reason%20for%20refund%3A%0A%0AOrder%20ID%3A%0ADocument%20Type%3A%0AReason%3A" style="text-decoration: none;">
                     <div class="guarantee-badge">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

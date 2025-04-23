@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#2563eb', 
+        primary: '#2563eb', /* Deep blue similar to LexEurope.ai */
         secondary: '#0ea5e9', /* Teal blue for secondary elements */
         accent: '#f97316', /* Orange accent for call-to-action elements */
         background: 'var(--background)',
